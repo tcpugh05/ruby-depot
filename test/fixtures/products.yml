@@ -1,5 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
+# From page 86-87 of "Agile Web Development with Rails"
 one:
   title: MyString
   description: MyText
@@ -12,10 +12,10 @@ two:
   image_url: MyString
   price: 9.99
 ruby:
-	title:	Programming Ruby 1.9
-	description:
-		Ruby is the fastest growing and most exciting dynamic 
-		language out there. If you need to get working programs 
-		delivered fast, you should add Ruby to your toolbox
-	price: 49.50
-	image_url: ruby.png
+  title:	Programming Ruby 1.9
+  description:
+    Ruby is the fastest growing and most exciting dynamic 
+    language out there. If you need to get working programs 
+    delivered fast, you should add Ruby to your toolbox
+  price: 49.50
+  image_url: ruby.png

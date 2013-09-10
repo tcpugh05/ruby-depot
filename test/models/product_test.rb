@@ -17,12 +17,12 @@ class ProductTest < ActiveSupport::TestCase
 							  image_url: "zzz.jpg")
 		product.price = -1
 		assert product.invalid?
-		assert_equal ["must be greater than or equal to .01"],
+		assert_equal ["must be greater than or equal to 0.01"],
 			product.errors[:price]
 			
 		product.price = 0
 		assert product.invalid?
-		assert_equal ["must be greater than or equal to .01"],
+		assert_equal ["must be greater than or equal to 0.01"],
 			product.errors[:price]
 			
 		product.price = 1
@@ -43,7 +43,7 @@ class ProductTest < ActiveSupport::TestCase
 	end	
 	
 	test "product is not valid without a unique title" do
-		product = Product.new(title: product(:ruby).title,
+		product = Product.new(title: products(:ruby).title,
 								description: "yyy",
 								price: 1,
 								image_url: "fred.gif")
@@ -52,12 +52,12 @@ class ProductTest < ActiveSupport::TestCase
 	end
 	
 	test "product is not valid without a unique title - il8n" do
-		product = Product.new(title: product(:ruby).title,
+		product = Product.new(title: products(:ruby).title,
 								description: "yyy",
 								price: 1,
 								image_url: "fred.gif")
 		assert product.invalid?
-		assert_equal [Il8n.translate('activerecord.errors.message.taken')],product.errors[:title]
+		assert_equal [I18n.translate('activerecord.errors.messages.taken')],product.errors[:title]
 	end
 	
 	def new_product(image_url)
